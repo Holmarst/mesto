@@ -1,0 +1,15 @@
+.page {
+  max-width: 320px;
+  font-family: 'inter', 'Helvetica', 'Arial', sans-serif;
+  text-rendering: optimizeLegibility;
+  color: white;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1280px) {
+
+  .page {
+    max-width: 880px;
+  }
+}
