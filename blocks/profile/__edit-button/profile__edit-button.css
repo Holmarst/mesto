@@ -5,10 +5,10 @@
   height: 18px;
   transition: opacity .2s;
   opacity: 1;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
-  cursor: pointer;
   opacity: .6;
 }
 

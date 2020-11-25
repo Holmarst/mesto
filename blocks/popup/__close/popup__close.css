@@ -8,10 +8,10 @@
   background-size: contain;
   transition: opacity .2s;
   opacity: 1;
+  cursor: pointer;
 }
 
 .popup__close:hover {
-  cursor: pointer;
   opacity: .6;
 }
 

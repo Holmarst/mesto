@@ -9,10 +9,10 @@
   padding: 0;
   transition: opacity .2s;
   opacity: 1;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
-  cursor: pointer;
   opacity: .6;
 }
 
