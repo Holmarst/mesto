@@ -5,6 +5,10 @@
   line-height: 33px;
   text-align: center;
   margin: 0 10px 0 0;
+  max-width: 254px;
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Обрезаем все, что не помещается в область */
+  text-overflow: ellipsis; /* Добавляем многоточие */
 }
 
 @media screen and (min-width: 1280px) {
