@@ -1,0 +1,12 @@
+.form__fields {
+  border: 0;
+  margin: 75px 0 45px 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 1280px) {
+
+  .form__fields {
+    margin: 54px 0 48px 0;
+  }
+}

@@ -1,12 +1,20 @@
-.elements {
+/* .elements__container {
+  list-style-type: none;
+} */
+
+
+.elements__container {
   display: grid;
   gap: 20px;
   justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 1280px) {
 
-  .elements {
+  .elements__container {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px 17px;

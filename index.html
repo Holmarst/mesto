@@ -4,13 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <title>Путешествия по России</title>
-  <meta name="description" content="Путешествие от столицы до Байкала на электричках">
-  <meta name="keywords" content="Путешествие по России, Куршская коса, Кольский, Алтай, Байкал, Карелия">
+  <title>Места России</title>
+  <meta name="description" content="Природа России">
+  <meta name="keywords" content="Путешествие по России, природа">
   <meta name="author" content="Любовь Холмогорова">
 </head>
 <body>
   <div class="page">
+
+    <fieldset class="form">
+      <div class="form__close"></div>
+      <h3 class="form__title">Редактировать профиль</h3>
+      <fieldset class="form__fields">
+        <input class="form__input" type="text" id="heading" name="heading" required>
+        <input class="form__input" type="text" id="description" name="description" required>
+      </fieldset>
+      <input class="form__button" type="submit">
+    </fieldset>
+
+    <div class="overlay"></div>
+    
     <div class="header">
       <a class="logo header__position"></a>
       <hr class="header__line">
@@ -19,75 +32,81 @@
     <main class="content">
 
       <section class="profile">
-
-        <div class="profile__avatar"></div>
-        <div class="profile__container">
-          <div class="profile__box">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <div class="profile__edit-button"></div>
-          </div>
-          <p class="profile__subtitle">Исследователь океана</p>
+        <div class="profile__info">
+            <div class="profile__avatar"></div>
+            <div class="profile__container">
+              <div class="profile__box">
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <div class="profile__edit-button"></div>
+              </div>
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div>
         </div>
-        <div class="profile__add-button"></div>
+        <input class="profile__add-button" type="button">
 
       </section>
 
       <section class="elements content__indent">
+        <ul class="elements__container">
 
-        <div class="element">
+          <li class="element">
           <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-черкесия" class="element__pic">
           <div class="element__caption">
             <h2 class="element__title">Карачаево-Черкесия</h2>
             <div class="element__like"></div>
           </div>
-        </div>
+          </li>
 
-        <div class="element">
+          <li class="element">
           <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус" class="element__pic">
           <div class="element__caption">
             <h2 class="element__title">Гора Эльбрус</h2>
             <div class="element__like"></div>
           </div>
-        </div>
+          </li>
 
-        <div class="element">
+          <li class="element">
           <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай" class="element__pic">
           <div class="element__caption">
             <h2 class="element__title">Домбай</h2>
             <div class="element__like"></div>
           </div>
-        </div>
+          </li>
 
-        <div class="element">
+          <li class="element">
           <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-черкесия" class="element__pic">
           <div class="element__caption">
             <h2 class="element__title">Карачаево-Черкесия</h2>
             <div class="element__like"></div>
           </div>
-        </div>
+          </li>
 
-        <div class="element">
+          <li class="element">
           <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус" class="element__pic">
           <div class="element__caption">
             <h2 class="element__title">Гора Эльбрус</h2>
             <div class="element__like"></div>
           </div>
-        </div>
+          </li>
 
-        <div class="element">
+          <li class="element">
           <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай" class="element__pic">
           <div class="element__caption">
             <h2 class="element__title">Домбай</h2>
             <div class="element__like"></div>
           </div>
-        </div>
+          </li>
+
+      </ul>
         
       </section>
 
     </main>
+
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
+
   </div>
   
 </body>
