@@ -1,4 +1,4 @@
-.form__button {
+.popup__button {
   width: 238px;
   height: 46px;
   font-weight: normal;
@@ -15,14 +15,14 @@
   opacity: 1;
 }
 
-.form__button:hover {
+.popup__button:hover {
   cursor: pointer;
   opacity: .8;
 }
 
 @media screen and (min-width: 1280px) {
 
-  .form__button {
+  .popup__button {
     width: 358px;
     height: 50px;
   }
