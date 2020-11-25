@@ -6,3 +6,13 @@ let save = document.querySelector('.popup__button');
 let name = document.querySelector('.popup__input_type_name');
 let about = document.querySelector('.popup__input_type_about');
 
+function openPopup() {
+  popup.classList.add('popup_opened');
+}
+
+function closePopup() {
+  popup.classList.remove('popup_opened');
+}
+
+edit.addEventListener('click', openPopup);
+close.addEventListener('click', closePopup);
