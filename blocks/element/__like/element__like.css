@@ -2,19 +2,21 @@
   background-image: url(../../../images/like.svg);
   width: 21px;
   height: 18px;
+  background-color: white;
+  text-decoration: none;
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 1;
   cursor: pointer;
+  border: 0;
 }
 
 .element__like:hover {
   opacity: .6;
 }
 
-.element__like:active {
+.element__like:focus {
   background-image: url(../../../images/likeActive.svg);
   opacity: 1;
+  outline: none;
 }
-  
-
