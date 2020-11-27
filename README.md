@@ -7,4 +7,4 @@
 
 **Сайт**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
+* [Ссылка](https://holmarst.github.io/mesto/index.html)
