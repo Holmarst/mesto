@@ -4,5 +4,17 @@
   height: 18px;
   background-size: contain;
   background-repeat: no-repeat;
-  
+  opacity: 1;
+  cursor: pointer;
 }
+
+.element__like:hover {
+  opacity: .6;
+}
+
+.element__like:active {
+  background-image: url(../../../images/likeActive.svg);
+  opacity: 1;
+}
+  
+
