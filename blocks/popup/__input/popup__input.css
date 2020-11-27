@@ -6,13 +6,18 @@
   border: 0;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
-  margin-top: 30px;
+  margin: 30px 0 0 0;
   padding: 0;
 }
 
-.popup__input:first-child {
-  margin-top: 0;
+.popup__input:first-of-type {
+  margin: 0;
 }
+
+.popup__input:focus {
+  outline: none;
+  border-bottom: 1px solid #009CEB;
+} 
 
 @media screen and (min-width: 1280px) {
 

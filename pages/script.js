@@ -1,10 +1,9 @@
-let edit = document.querySelector('.profile__edit-button');
+let editButton = document.querySelector('.profile__edit-button');
+let closeButton = document.querySelector('.popup__close');
+let profileTitle = document.querySelector('.profile__title');
+let profileSubtitle = document.querySelector('.profile__subtitle');
 let popup = document.querySelector('.popup');
-let add = document.querySelector('.profile__add-button');
-let close = document.querySelector('.popup__close');
-let save = document.querySelector('.popup__button');
-let name = document.querySelector('.popup__input_type_name');
-let about = document.querySelector('.popup__input_type_about');
+let form = document.querySelector('.popup__container');
 
 function openPopup() {
   popup.classList.add('popup_opened');
@@ -14,5 +13,29 @@ function closePopup() {
   popup.classList.remove('popup_opened');
 }
 
-edit.addEventListener('click', openPopup);
-close.addEventListener('click', closePopup);
+function formSubmitHandler (evt) {
+  evt.preventDefault(); 
+
+  let nameInput = document.querySelector('.popup__input_type_name');
+  let aboutInput = document.querySelector('.popup__input_type_about');
+
+  nameInput.textContent = nameInput.value;
+  profileTitle.textContent = nameInput.textContent;
+  aboutInput.textContent = aboutInput.value;
+  profileSubtitle.textContent = aboutInput.textContent;
+
+  if (nameInput.textContent === '') {
+    profileTitle.textContent = "Имя";
+  }
+
+  if (aboutInput.textContent === '') {
+    profileSubtitle.textContent = "Пока нет описания";
+  }
+
+  closePopup();
+}
+
+form.addEventListener('submit', formSubmitHandler);
+editButton.addEventListener('click', openPopup);
+closeButton.addEventListener('click', closePopup);
+
