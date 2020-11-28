@@ -4,10 +4,16 @@ let profileTitle = document.querySelector('.profile__title');
 let profileSubtitle = document.querySelector('.profile__subtitle');
 let popup = document.querySelector('.popup');
 let form = document.querySelector('.popup__container');
+let nameInput = document.querySelector('.popup__input_type_name');
+let aboutInput = document.querySelector('.popup__input_type_about');
+let nameDefault = nameInput.value;
+let aboutDefault = aboutInput.value;
 
 function openPopup() {
   popup.classList.add('popup_opened');
-}
+  nameInput.value = nameDefault;
+  aboutInput.value = aboutDefault;
+  }
 
 function closePopup() {
   popup.classList.remove('popup_opened');
@@ -16,19 +22,14 @@ function closePopup() {
 function formSubmitHandler (evt) {
   evt.preventDefault(); 
 
-  let nameInput = document.querySelector('.popup__input_type_name');
-  let aboutInput = document.querySelector('.popup__input_type_about');
+  profileTitle.textContent = nameInput.value;
+  profileSubtitle.textContent = aboutInput.value;
 
-  nameInput.textContent = nameInput.value;
-  profileTitle.textContent = nameInput.textContent;
-  aboutInput.textContent = aboutInput.value;
-  profileSubtitle.textContent = aboutInput.textContent;
-
-  if (nameInput.textContent === '') {
+  if (nameInput.value === '') {
     profileTitle.textContent = "Имя";
   }
 
-  if (aboutInput.textContent === '') {
+  if (aboutInput.value === '') {
     profileSubtitle.textContent = "Пока нет описания";
   }
 

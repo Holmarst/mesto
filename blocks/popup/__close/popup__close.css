@@ -6,9 +6,12 @@
   width: 22px;
   height: 22px;
   background-size: contain;
+  background-color: black;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
   transition: opacity .2s;
   opacity: 1;
-  cursor: pointer;
 }
 
 .popup__close:hover {
