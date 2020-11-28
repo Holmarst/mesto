@@ -18,21 +18,20 @@
     <!-- popup -->
 
     <div class="popup">
-        <form class="popup__container">
-          <div class="popup__close"></div>
+        <form class="popup__container" name="popup__container">
+          <button class="popup__close" type="button"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <input type="text" class="popup__input popup__input_type_name" placeholder="Ваше имя" value="Жак-Ив Кусто">
-          <input type="text" class="popup__input popup__input_type_about" placeholder="Несколько слов о себе" value="Исследователь океана">
+          <input type="text" class="popup__input popup__input_type_name" placeholder="Ваше имя" value="Жак-Ив Кусто" name="popup__input_type_name">
+          <input type="text" class="popup__input popup__input_type_about" placeholder="Несколько слов о себе" value="Исследователь океана" name="popup__input_type_about">
           <button class="popup__button" type="submit">Сохранить</button>
         </form>
     </div>
 
     <!-- header -->
     
-    <div class="header page__indent">
-      <a href="https://holmarst.github.io/mesto/index.html" class="logo header__position" target="_self"></a>
-      <hr class="header__line">
-    </div>
+    <header class="header page__indent">
+      <a href="https://holmarst.github.io/mesto/index.html" target="_self"><img class="logo header__position" src="images/logo.svg" alt="Логотип"></a>
+    </header>
 
     <!-- content -->
 
@@ -40,7 +39,7 @@
 
       <section class="profile">
         <div class="profile__info">
-            <div class="profile__avatar"></div>
+            <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар пользователя">
             <div class="profile__container">
               <div class="profile__box">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>

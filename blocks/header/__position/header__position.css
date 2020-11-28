@@ -1,3 +1,10 @@
 .header__position {
-  margin: 28px 0 30px 27px;
+  margin: 28px 0 31px 27px;
+}
+
+@media screen and (min-width: 1280px) {
+
+  .header__position {
+    margin: 45px 0 40px 0;
+  }
 }

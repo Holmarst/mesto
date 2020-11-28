@@ -5,7 +5,6 @@
   width: 18px;
   height: 18px;
   border: 0;
-  margin-top: 7px;
   opacity: 1;
   cursor: pointer;
 }
@@ -24,5 +23,6 @@
   .profile__edit-button {
     width: 24px;
     height: 24px;
+    margin-top: 6px;
   }
 }
