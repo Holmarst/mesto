@@ -5,7 +5,7 @@
   display: inline-block;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
 
   .logo {
     min-width: 142px;

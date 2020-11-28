@@ -7,11 +7,20 @@
   margin: 0;
 }
 
+@media screen and (min-width: 768px) {
+
+  .elements__container {
+    grid-template-columns: repeat(2, 282px);
+    grid-template-rows: repeat(3, 361px);
+    gap: 20px 17px;
+  }
+}
+
+
 @media screen and (min-width: 1280px) {
 
   .elements__container {
     grid-template-columns: repeat(3, 282px);
-    grid-template-rows: 361px 361px;
-    gap: 20px 17px;
+    grid-template-rows: repeat(2, 361px);
   }
 }

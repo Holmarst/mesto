@@ -2,7 +2,7 @@
   margin: 28px 0 31px 27px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
 
   .header__position {
     margin: 45px 0 40px 0;
