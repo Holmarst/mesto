@@ -6,13 +6,11 @@ let popup = document.querySelector('.popup');
 let form = document.querySelector('.popup__container');
 let nameInput = document.querySelector('.popup__input_type_name');
 let aboutInput = document.querySelector('.popup__input_type_about');
-let nameDefault = nameInput.value;
-let aboutDefault = aboutInput.value;
 
 function openPopup() {
   popup.classList.add('popup_opened');
-  nameInput.value = nameDefault;
-  aboutInput.value = aboutDefault;
+  nameInput.value = profileTitle.textContent;
+  aboutInput.value = profileSubtitle.textContent;
   }
 
 function closePopup() {
