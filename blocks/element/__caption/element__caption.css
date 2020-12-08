@@ -1,6 +1,7 @@
 .element__caption {
   background-color: white;
   border-radius: 0 0 10px 10px;
+  width: 282px;
   display: flex;
   align-items: center;
   padding: 25px 15px 31px 21px;

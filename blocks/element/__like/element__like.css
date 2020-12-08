@@ -16,7 +16,5 @@
 }
 
 .element__like:focus {
-  background-image: url(../../../images/likeActive.svg);
-  opacity: 1;
   outline: none;
 }
