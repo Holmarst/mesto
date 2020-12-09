@@ -1,22 +1,45 @@
-let editButton = document.querySelector('.profile__edit-button');
-let closeButton = document.querySelector('.popup__close');
-let profileTitle = document.querySelector('.profile__title');
-let profileSubtitle = document.querySelector('.profile__subtitle');
-let popup = document.querySelector('.popup');
-let form = document.querySelector('.popup__container');
-let nameInput = document.querySelector('.popup__input_type_name');
-let aboutInput = document.querySelector('.popup__input_type_about');
-let like = document.querySelector('.element__like');
+const editButton = document.querySelector('.profile__edit-button');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
+const form = document.querySelector('.popup__container');
+const nameInput = document.querySelector('.popup__input_type_name');
+const aboutInput = document.querySelector('.popup__input_type_about');
+const addButton = document.querySelector('.profile__add-button');
+// let popup = document.querySelector('.popup');
+const popupAdd = document.querySelector('.popup_act_add-card');
+const popupEdit = document.querySelector('.popup_act_edit-profile');  
+ 
 
-function openPopup() {
-  popup.classList.add('popup_opened');
+// popup / open /close
+
+function openPopup(typeofPopup) {
+  typeofPopup.classList.add('popup_opened');
   nameInput.value = profileTitle.textContent;
   aboutInput.value = profileSubtitle.textContent;
-  }
-
-function closePopup() {
-  popup.classList.remove('popup_opened');
 }
+
+function closePopup(typeofPopup) {
+  typeofPopup.classList.remove('popup_opened');
+}
+
+document.querySelector('.popup__close_act_add-card').addEventListener('click', function () {
+  closePopup(popupAdd);
+});
+
+document.querySelector('.popup__close').addEventListener('click', function () {
+  closePopup(popupEdit);
+});
+
+editButton.addEventListener('click', function () {
+  openPopup(popupEdit);
+});
+
+addButton.addEventListener('click', function () {
+  openPopup(popupAdd);
+});
+
+
+// popap / edit profile
 
 function formSubmitHandler (evt) {
   evt.preventDefault(); 
@@ -27,17 +50,16 @@ function formSubmitHandler (evt) {
   if (nameInput.value === '') {
     profileTitle.textContent = "Имя";
   }
-
   if (aboutInput.value === '') {
     profileSubtitle.textContent = "Пока нет описания";
   }
-
   closePopup();
 }
 
 form.addEventListener('submit', formSubmitHandler);
-editButton.addEventListener('click', openPopup);
-closeButton.addEventListener('click', closePopup);
+
+
+// 6 cards
 
 const initialCards = [
   {
