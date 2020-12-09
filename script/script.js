@@ -5,9 +5,9 @@ const form = document.querySelector('.popup__container');
 const nameInput = document.querySelector('.popup__input_type_name');
 const aboutInput = document.querySelector('.popup__input_type_about');
 const addButton = document.querySelector('.profile__add-button');
-// let popup = document.querySelector('.popup');
-const popupAdd = document.querySelector('.popup_act_add-card');
-const popupEdit = document.querySelector('.popup_act_edit-profile');  
+const closeAllButtons = document.querySelectorAll('.popup__close');
+const popupAddCard = document.querySelector('.popup_act_add-card');
+const popupEditProfile = document.querySelector('.popup_act_edit-profile');  
  
 
 // popup / open /close
@@ -18,24 +18,18 @@ function openPopup(typeofPopup) {
   aboutInput.value = profileSubtitle.textContent;
 }
 
-function closePopup(typeofPopup) {
-  typeofPopup.classList.remove('popup_opened');
-}
+closeAllButtons.forEach(function (button) {
+  button.addEventListener('click', function (evt) {
+    evt.target.closest('.popup_opened').classList.remove('popup_opened');
+  });
+}); 
 
-document.querySelector('.popup__close_act_add-card').addEventListener('click', function () {
-  closePopup(popupAdd);
-});
-
-document.querySelector('.popup__close').addEventListener('click', function () {
-  closePopup(popupEdit);
+addButton.addEventListener('click', function () {
+  openPopup(popupAddCard);
 });
 
 editButton.addEventListener('click', function () {
-  openPopup(popupEdit);
-});
-
-addButton.addEventListener('click', function () {
-  openPopup(popupAdd);
+  openPopup(popupEditProfile);
 });
 
 
