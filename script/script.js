@@ -105,6 +105,10 @@ function composeItem(item) {
   titleItem.textContent = item.name; 
   const picItem = newCardItem.querySelector('.element__pic'); 
   picItem.src = item.link; 
+  const like = newCardItem.querySelector('.element__like'); 
+  like.addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like_active');
+  });
   return newCardItem;
 }
 
@@ -124,4 +128,3 @@ function addNewItem(evt){
 renderCards();
 formEditProfile.addEventListener('submit', formSubmitHandler);
 formAddCard.addEventListener('submit', addNewItem);
-
