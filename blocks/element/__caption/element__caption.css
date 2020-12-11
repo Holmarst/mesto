@@ -2,6 +2,7 @@
   background-color: white;
   border-radius: 0 0 10px 10px;
   width: 282px;
+  min-height: 85px;
   display: flex;
   align-items: center;
   padding: 25px 15px 31px 21px;

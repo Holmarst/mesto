@@ -106,13 +106,14 @@ function composeItem(item) {
   const picItem = newCardItem.querySelector('.element__pic'); 
   picItem.src = item.link; 
   const like = newCardItem.querySelector('.element__like'); 
-  like.addEventListener('click', function (evt) {
-    evt.target.classList.toggle('element__like_active');
-  });
+  like.addEventListener('click', likeCard);
+  const trash = newCardItem.querySelector('.element__trash'); 
+  trash.addEventListener('click', removeCard);
+  
   return newCardItem;
 }
 
-// popap / add card
+// add card
 
 function addNewItem(evt){
   evt.preventDefault();
@@ -121,6 +122,18 @@ function addNewItem(evt){
   const newItemHTML = composeItem({ name: inputText, link: inputLink });
   cardContainer.prepend(newItemHTML);
   closePopup(evt);
+}
+
+// remove card
+
+function removeCard(evt){
+  evt.target.closest('.element').remove();
+}
+
+// like card
+
+function likeCard(evt){
+  evt.target.classList.toggle('element__like_active');
 }
 
 // render + listeners

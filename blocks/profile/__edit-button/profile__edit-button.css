@@ -1,6 +1,6 @@
 .profile__edit-button {
   background-image: url(../../../images/edit-button.svg);
-  background-color: black;
+  background-color: transparent;
   background-size: contain;
   width: 18px;
   height: 18px;

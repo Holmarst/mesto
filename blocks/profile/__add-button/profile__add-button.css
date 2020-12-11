@@ -4,7 +4,7 @@
   height: 50px;
   border: 0;
   box-sizing: border-box;
-  background-color: black;
+  background-color: transparent;
   text-decoration: none;
   padding: 0;
   transition: opacity .2s;
