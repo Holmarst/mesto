@@ -58,6 +58,8 @@ function openPopupEditProfile() {
 
 function openPopupAddCard() {
   popupAddCard.classList.add('popup_opened');
+  placeInput.value = "";
+  linkInput.value = "";
 }
 
 function closePopup(evt) {
