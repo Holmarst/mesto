@@ -2,3 +2,11 @@
   max-width: 240px;
   padding: 30px 20px;
 }
+
+@media screen and (min-width: 768px) {
+
+  .popup__container_act_add-card {
+    max-width: 430px;
+    padding: 36px;
+  }
+}
