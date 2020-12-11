@@ -1,4 +1,6 @@
 .popup_opened {
   display: flex;
   z-index: 3;
+  visibility: visible;
+  opacity: 1;
 }
