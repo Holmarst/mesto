@@ -31,8 +31,8 @@
       <form class="popup__container popup__container_act_add-card" name="popup-container">
         <button class="popup__close popup__close_act_add-card" type="button"></button>
         <h3 class="popup__title popup__title_act_add-card">Новое место</h3>
-        <input type="text" class="popup__input popup__input_type_name popup__input_act_add-card" placeholder="Название" value="" name="popup-name">
-        <input type="text" class="popup__input popup__input_type_about popup__input_act_add-card" placeholder="Ссылка на картинку" value="" name="popup-about">
+        <input type="text" class="popup__input popup__input_type_name popup__input_act_add-card popup__input_input_name" placeholder="Название" value="" name="popup-name">
+        <input type="text" class="popup__input popup__input_type_about popup__input_act_add-card popup__input_input_link" placeholder="Ссылка на картинку" value="" name="popup-about">
         <button class="popup__button popup__button_act_add-card" type="submit">Создать</button>
       </form>
     </div>
@@ -79,7 +79,7 @@
 
   </div>
 
-  <template id="card-template">
+  <template class="card-template">
     <li class="element">
       <img class="element__pic">
       <div class="element__caption">
