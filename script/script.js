@@ -28,12 +28,12 @@ const initialCards = [
 ];
 
 
-const profileTitle = document.querySelector('.profile__title');
-const profileSubtitle = document.querySelector('.profile__subtitle');
-const nameInput = document.querySelector('.popup__input_type_name');
-const aboutInput = document.querySelector('.popup__input_type_about');
-const placeInput = document.querySelector('.popup__input_input_name');
-const linkInput = document.querySelector('.popup__input_input_link');
+let profileTitle = document.querySelector('.profile__title');
+let profileSubtitle = document.querySelector('.profile__subtitle');
+let nameInput = document.querySelector('.popup__input_type_name');
+let aboutInput = document.querySelector('.popup__input_type_about');
+let placeInput = document.querySelector('.popup__input_input_name');
+let linkInput = document.querySelector('.popup__input_input_link');
 
 const addButton = document.querySelector('.profile__add-button');
 const editButton = document.querySelector('.profile__edit-button');
