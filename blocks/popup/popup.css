@@ -1,17 +1,17 @@
 .popup {
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 320px;
-  min-height: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   background:rgba(0, 0, 0, .5);
-  display: flex;
+  z-index: 3;
   visibility: hidden;
   opacity: 0;
   transition: visibility .1s, opacity .2s ease-in-out;
-  
 }
 
 @media screen and (min-width: 768px) {

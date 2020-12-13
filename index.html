@@ -37,6 +37,14 @@
       </form>
     </div>
 
+    <div class="popup popup_act_pic-open"> 
+      <div class="pic-open">
+        <button class="popup__close popup__close_act_add-card" type="button"></button>
+        <img class="pic-open__img" src="" alt="">
+        <h2 class="pic-open__description"></h2>
+      </div>
+    </div>
+
     <!-- header -->
     
     <header class="header page__indent">
@@ -80,21 +88,13 @@
 
   <template class="card-template">
     <li class="element">
-      <img class="element__pic">
+      <img class="element__pic" src="" alt="">
       <button class="element__trash" type="button"></button>
       <div class="element__caption">
         <h2 class="element__title"></h2>
         <button class="element__like" type="button"></button>
       </div>
     </li>
-  </template>
-
-  <template class="pic-open-template">
-    <div class="pic-open">
-      <button class="popup__close pic-open__button" type="button"></button>
-      <img class="pic-open__img">
-      <p class="pic-open__description"></p>
-    </div>  
   </template>
 
   <!-- script -->

@@ -1,0 +1,12 @@
+.pic-open {
+  position: relative;
+  max-width: 240px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .pic-open {
+    max-width: 75vw;
+    max-height: 75vh;
+  }
+}

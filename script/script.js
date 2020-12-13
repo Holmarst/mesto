@@ -40,7 +40,8 @@ const editButton = document.querySelector('.profile__edit-button');
 const closeAllButtons = document.querySelectorAll('.popup__close');
 
 const popupAddCard = document.querySelector('.popup_act_add-card');
-const popupEditProfile = document.querySelector('.popup_act_edit-profile');  
+const popupEditProfile = document.querySelector('.popup_act_edit-profile');
+const popupPicOpen = document.querySelector('.popup_act_pic-open');
 
 const formEditProfile = document.querySelector('.popup__container');
 const formAddCard = document.querySelector('.popup__container_act_add-card');
@@ -103,15 +104,25 @@ function renderCards() {
 
 function composeItem(item) {
   const newCardItem = cardTemplate.content.cloneNode(true);
-  const titleItem = newCardItem.querySelector('.element__title'); 
-  titleItem.textContent = item.name; 
-  const picItem = newCardItem.querySelector('.element__pic'); 
-  picItem.src = item.link; 
-  const like = newCardItem.querySelector('.element__like'); 
-  like.addEventListener('click', likeCard);
-  const trash = newCardItem.querySelector('.element__trash'); 
-  trash.addEventListener('click', removeCard);
   
+  const titleItem = newCardItem.querySelector('.element__title');
+  titleItem.textContent = item.name;
+  const picItem = newCardItem.querySelector('.element__pic');
+  picItem.src = item.link;
+  picItem.alt = item.name;
+
+  const like = newCardItem.querySelector('.element__like');
+  like.addEventListener('click', likeCard);
+  const trash = newCardItem.querySelector('.element__trash');
+  trash.addEventListener('click', removeCard);
+
+  const text = titleItem.textContent;
+  const img = picItem.src;
+
+  picItem.addEventListener('click', () => {
+    openPic(text, img);
+  });
+
   return newCardItem;
 }
 
@@ -136,6 +147,16 @@ function removeCard(evt){
 
 function likeCard(evt){
   evt.target.classList.toggle('element__like_active');
+}
+
+// open pic
+
+function openPic(text, img){
+  popupPicOpen.classList.add('popup_opened');
+  document.querySelector('.pic-open__img').src = img;
+  document.querySelector('.pic-open__img').alt = text;
+  document.querySelector('.pic-open__description').textContent = text;
+
 }
 
 // render + listeners
