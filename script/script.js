@@ -89,13 +89,6 @@ function editProfileInfo (evt) {
   evt.preventDefault(); 
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = aboutInput.value;
-
-  if (nameInput.value === '') {
-    profileTitle.textContent = "Имя";
-  }
-  if (aboutInput.value === '') {
-    profileSubtitle.textContent = "Пока нет описания";
-  }
   closePopup(evt);
 }
 
