@@ -28,12 +28,12 @@ const initialCards = [
 ];
 
 
-let profileTitle = document.querySelector('.profile__title');
-let profileSubtitle = document.querySelector('.profile__subtitle');
-let nameInput = document.querySelector('.popup__input_type_name');
-let aboutInput = document.querySelector('.popup__input_type_about');
-let placeInput = document.querySelector('.popup__input_input_name');
-let linkInput = document.querySelector('.popup__input_input_link');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
+const nameInput = document.querySelector('.popup__input_type_name');
+const aboutInput = document.querySelector('.popup__input_type_about');
+const placeInput = document.querySelector('.popup__input_input_name');
+const linkInput = document.querySelector('.popup__input_input_link');
 
 const addButton = document.querySelector('.profile__add-button');
 const editButton = document.querySelector('.profile__edit-button');
@@ -81,7 +81,7 @@ addButton.addEventListener('click', function () {
 
 // popap / edit profile
 
-function formSubmitHandler (evt) {
+function editProfileInfo (evt) {
   evt.preventDefault(); 
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = aboutInput.value;
@@ -153,8 +153,9 @@ function likeCard(evt){
 
 function openPic(text, img){
   popupPicOpen.classList.add('popup_opened');
-  document.querySelector('.pic-open__img').src = img;
-  document.querySelector('.pic-open__img').alt = text;
+  const picOpen = document.querySelector('.pic-open__img');
+  picOpen.src = img;
+  picOpen.alt = text;
   document.querySelector('.pic-open__description').textContent = text;
 
 }
@@ -162,5 +163,5 @@ function openPic(text, img){
 // render + listeners
 
 renderCards();
-formEditProfile.addEventListener('submit', formSubmitHandler);
+formEditProfile.addEventListener('submit', editProfileInfo);
 formAddCard.addEventListener('submit', addNewItem);
