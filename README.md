@@ -9,4 +9,4 @@
 * Работает удаление и лайк карт
 * Научились делать универсальные функции открыти/закрытия попапов
 
-## [Посмотреть работу](https://holmarst.github.io/mesto/index.html)
+[Посмотреть работу](https://holmarst.github.io/mesto/index.html)
