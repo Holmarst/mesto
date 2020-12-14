@@ -149,7 +149,7 @@ function likeCard(evt){
 // open pic
 
 function openPic(text, img){
-  popupPicOpen.classList.add('popup_opened');
+  showPopup(popupPicOpen);
   const picOpen = document.querySelector('.pic-open__img');
   picOpen.src = img;
   picOpen.alt = text;
