@@ -51,16 +51,20 @@ const cardTemplate = document.querySelector('.card-template');
 
 // popup / open /close
 
+const showPopup = (popup) => {
+  popup.classList.add('popup_opened');
+};
+
 function openPopupEditProfile() {
-  popupEditProfile.classList.add('popup_opened');
+  
+  showPopup(popupEditProfile);
   nameInput.value = profileTitle.textContent;
   aboutInput.value = profileSubtitle.textContent;
 }
 
 function openPopupAddCard() {
-  popupAddCard.classList.add('popup_opened');
-  placeInput.value = "";
-  linkInput.value = "";
+  showPopup(popupAddCard);
+  formAddCard.reset();
 }
 
 function closePopup(evt) {
@@ -69,7 +73,7 @@ function closePopup(evt) {
 
 closeAllButtons.forEach(function (button) {
   button.addEventListener('click', closePopup);
-}); 
+});
 
 editButton.addEventListener('click', function () {
   openPopupEditProfile();
