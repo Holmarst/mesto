@@ -18,11 +18,13 @@
     <!-- popup -->
 
     <div class="popup popup_act_edit-profile">
-        <form class="popup__container" name="popup-container">
+        <form class="popup__container" name="popup-container" novalidate>
           <button class="popup__close" type="button"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <input type="text" class="popup__input popup__input_type_name" required placeholder="Ваше имя" value="Жак-Ив Кусто" name="popup-name">
-          <input type="text" class="popup__input popup__input_type_about" required placeholder="Несколько слов о себе" value="Исследователь океана" name="popup-about">
+          <input type="text" id="edit-name" class="popup__input popup__input_type_name" required minlength="2" maxlength="40" placeholder="Ваше имя" value="Жак-Ив Кусто" name="popup-name">
+          <span class="popup__input_type_error" id="edit-name-error"></span>
+          <input type="text" id="edit-about" class="popup__input popup__input_type_about" required minlength="2" maxlength="40" placeholder="Несколько слов о себе" value="Исследователь океана" name="popup-about">
+          <span class="popup__input_type_error" id="edit-about-error"></span>
           <button class="popup__button" type="submit">Сохранить</button>
         </form>
     </div>
@@ -31,8 +33,10 @@
       <form class="popup__container popup__container_act_add-card" name="popup-container">
         <button class="popup__close popup__close_act_add-card" type="button"></button>
         <h3 class="popup__title popup__title_act_add-card">Новое место</h3>
-        <input type="text" class="popup__input popup__input_type_name popup__input_act_add-card popup__input_input_name" required placeholder="Название" value="" name="popup-name">
-        <input type="text" class="popup__input popup__input_type_about popup__input_act_add-card popup__input_input_link" required placeholder="Ссылка на картинку" value="" name="popup-about">
+        <input type="text" id="add-name" class="popup__input popup__input_type_name popup__input_act_add-card popup__input_input_name" required placeholder="Название" value="" name="popup-name">
+        <span class="popup__input_type_error" id="add-name-error"></span>
+        <input type="url" id="add-url" class="popup__input popup__input_type_about popup__input_act_add-card popup__input_input_link" required placeholder="Ссылка на картинку" value="" name="popup-about">
+        <span class="popup__input_type_error" id="add-url-error"></span>
         <button class="popup__button popup__button_act_add-card" type="submit">Создать</button>
       </form>
     </div>
