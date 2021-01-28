@@ -1,3 +1,5 @@
+import { Card } from './Card.js';
+
 // 6 cards
 
 const initialCards = [
@@ -125,45 +127,47 @@ function editProfileInfo (evt) {
 
 // render cards
 
-function renderCards() {
-  const listCards = initialCards.map(composeItem);
-  cardContainer.append(...listCards);
-}
+// function renderCards() {
+//   const listCards = initialCards.map(composeItem);
+//   cardContainer.append(...listCards);
+// }
 
-function composeItem(item) {
-  const newCardItem = cardTemplate.content.cloneNode(true);
+// generateCard
+
+// function composeItem(item) {
+//   const newCardItem = cardTemplate.content.cloneNode(true);
   
-  const titleItem = newCardItem.querySelector('.element__title');
-  titleItem.textContent = item.name;
-  const picItem = newCardItem.querySelector('.element__pic');
-  picItem.src = item.link;
-  picItem.alt = item.name;
+//   const titleItem = newCardItem.querySelector('.element__title');
+//   titleItem.textContent = item.name;
+//   const picItem = newCardItem.querySelector('.element__pic');
+//   picItem.src = item.link;
+//   picItem.alt = item.name;
 
-  const like = newCardItem.querySelector('.element__like');
-  like.addEventListener('click', likeCard);
-  const trash = newCardItem.querySelector('.element__trash');
-  trash.addEventListener('click', removeCard);
+//   const like = newCardItem.querySelector('.element__like');
+//   like.addEventListener('click', likeCard);
+//   const trash = newCardItem.querySelector('.element__trash');
+//   trash.addEventListener('click', removeCard);
 
-  const text = titleItem.textContent;
-  const img = picItem.src;
+//   const text = titleItem.textContent;
+//   const img = picItem.src;
 
-  picItem.addEventListener('click', () => {
-    openPic(text, img);
-  });
+//   picItem.addEventListener('click', () => {
+//     openPic(text, img);
+//   });
 
-  return newCardItem;
-}
+//   return newCardItem;
+// }
 
 // add card
 
-function addNewItem(evt){
-  evt.preventDefault();
-  const inputText = placeInput.value;
-  const inputLink = linkInput.value;
-  const newItemHTML = composeItem({ name: inputText, link: inputLink });
-  cardContainer.prepend(newItemHTML);
-  removePopup(evt);
-}
+// function addNewItem(evt){
+//   evt.preventDefault();
+//   const inputText = placeInput.value;
+//   const inputLink = linkInput.value;
+//   const newItemHTML = composeItem({ name: inputText, link: inputLink });
+//   cardContainer.prepend(newItemHTML);
+//   removePopup(evt);
+// }
 
 // remove card
 
@@ -190,6 +194,21 @@ function openPic(text, img){
 
 // render + listeners
 
-renderCards();
+// renderCards();
+
 formPopup.addEventListener('submit', editProfileInfo);
-formAddCard.addEventListener('submit', addNewItem);
+// formAddCard.addEventListener('submit', addNewItem);
+
+
+
+
+const newCard = () => {
+  initialCards.forEach(item => {
+    const card = new Card(item.name, item.link);
+    const cardElement = card.generateCard();
+    document.querySelector('.elements__container').append(cardElement);
+  });
+}
+
+
+newCard();

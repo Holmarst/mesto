@@ -1,25 +1,26 @@
 export class Card {
-    constructor(link, name) { // добавили второй параметр
-        this._link = link;
-        this._name = name;
+    constructor(name, link) { 
+      this._name = name;
+      this._alt = name;
+      this._link = link;
     }
   
     _getTemplate() {
-    const cardElement = document
+      const cardElement = document
       .querySelector('.card-template')
       .content
-      .querySelector('.card')
+      .querySelector('.element')
       .cloneNode(true);
   
-    return cardElement;
+      return cardElement;
     }
 
     generateCard() {
-        this._element = this._getTemplate();
+      this._element = this._getTemplate();
 
-        this._getTemplate.querySelector('.card__image').src = this._link;
-        this._getTemplate.querySelector('.card__subtitle').textContent = this._name;
+      this._element.querySelector('.element__title').textContent = this._name;
+      this._element.querySelector('.element__pic').src = this._link;
 
-        return this._element;
+      return this._element;
     }
 }
