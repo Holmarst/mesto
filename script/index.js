@@ -1,4 +1,4 @@
-import { Card } from './Card.js';
+import { Card } from './Card.js'
 
 // 6 cards
 
@@ -46,7 +46,7 @@ const editProfileButton = document.querySelector('.popup__button');
 
 const popupAddCard = document.querySelector('.popup_act_add-card');
 const popupEditProfile = document.querySelector('.popup_act_edit-profile');
-const popupPicOpen = document.querySelector('.popup_act_pic-open');
+// const popupPicOpen = document.querySelector('.popup_act_pic-open');
 
 const formPopup = document.querySelector('.popup__form');
 const formAddCard = document.querySelector('.popup__form_act_add-card');
@@ -56,11 +56,18 @@ const cardTemplate = document.querySelector('.card-template');
 
 // popup / open /close
 
-function showPopup(popup) {
+export function showPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closeEsc);
   document.addEventListener('click', closeOverlay);
+}
 
+function openPopupAddCard() {
+  showPopup(popupAddCard);
+  formAddCard.reset();
+  setButtonState(addCardButton, formAddCard.checkValidity(), validationConfig);
+  hideError(popupAddCard, placeInput, validationConfig);
+  hideError(popupAddCard, linkInput, validationConfig);
 }
 
 function openPopupEditProfile() {
@@ -72,12 +79,11 @@ function openPopupEditProfile() {
   hideError(formPopup, aboutInput, validationConfig);
 }
 
-function openPopupAddCard() {
-  showPopup(popupAddCard);
-  formAddCard.reset();
-  setButtonState(addCardButton, formAddCard.checkValidity(), validationConfig);
-  hideError(popupAddCard, placeInput, validationConfig);
-  hideError(popupAddCard, linkInput, validationConfig);
+function editProfileInfo (evt) {
+  evt.preventDefault();
+  profileTitle.textContent = nameInput.value;
+  profileSubtitle.textContent = aboutInput.value;
+  removePopup(evt);
 }
 
 function removePopup(evt) {
@@ -116,90 +122,7 @@ addButton.addEventListener('click', function () {
   openPopupAddCard();
 });
 
-// popap / edit profile
-
-function editProfileInfo (evt) {
-  evt.preventDefault();
-  profileTitle.textContent = nameInput.value;
-  profileSubtitle.textContent = aboutInput.value;
-  removePopup(evt);
-}
-
-// render cards
-
-// function renderCards() {
-//   const listCards = initialCards.map(composeItem);
-//   cardContainer.append(...listCards);
-// }
-
-// generateCard
-
-// function composeItem(item) {
-//   const newCardItem = cardTemplate.content.cloneNode(true);
-  
-//   const titleItem = newCardItem.querySelector('.element__title');
-//   titleItem.textContent = item.name;
-//   const picItem = newCardItem.querySelector('.element__pic');
-//   picItem.src = item.link;
-//   picItem.alt = item.name;
-
-//   const like = newCardItem.querySelector('.element__like');
-//   like.addEventListener('click', likeCard);
-//   const trash = newCardItem.querySelector('.element__trash');
-//   trash.addEventListener('click', removeCard);
-
-//   const text = titleItem.textContent;
-//   const img = picItem.src;
-
-//   picItem.addEventListener('click', () => {
-//     openPic(text, img);
-//   });
-
-//   return newCardItem;
-// }
-
-// add card
-
-// function addNewItem(evt){
-//   evt.preventDefault();
-//   const inputText = placeInput.value;
-//   const inputLink = linkInput.value;
-//   const newItemHTML = composeItem({ name: inputText, link: inputLink });
-//   cardContainer.prepend(newItemHTML);
-//   removePopup(evt);
-// }
-
-// remove card
-
-function removeCard(evt){
-  evt.target.closest('.element').remove();
-}
-
-// like card
-
-function likeCard(evt){
-  evt.target.classList.toggle('element__like_active');
-}
-
-// open pic
-
-function openPic(text, img){
-  showPopup(popupPicOpen);
-  const picOpen = document.querySelector('.pic-open__img');
-  picOpen.src = img;
-  picOpen.alt = text;
-  document.querySelector('.pic-open__description').textContent = text;
-
-}
-
-// render + listeners
-
-// renderCards();
-
 formPopup.addEventListener('submit', editProfileInfo);
-// formAddCard.addEventListener('submit', addNewItem);
-
-
 
 
 const newCard = () => {
@@ -209,6 +132,5 @@ const newCard = () => {
     document.querySelector('.elements__container').append(cardElement);
   });
 }
-
 
 newCard();
